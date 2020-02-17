@@ -1,0 +1,95 @@
+
+Showing logs for build [32mcb-kubecd-golang-05-master-z794w-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-xs8hx[0m
+{"level":"warn","ts":1581974246.3782032,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1581974246.378881,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-golang-05-master-z794w-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-ffxwm[0m
+{"level":"warn","ts":1581974249.6335552,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1581974249.6347294,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-golang-05-master-z794w-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-golang-05-master-z794w-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-golang-05-master-z794w-r9kbv[0m
+{"level":"warn","ts":1581974341.7221189,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1581974342.9046826,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/golang-05.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-golang-05-master-z794w-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-golang-05-master-z794w-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+failed to get helm version: failed to run 'helm version --short' command in directory '', output: 'Client: v2.14.3+g0e7f3b6
+Error: could not find tiller'
+old helm binary on the PATH so replacing with helm 3
+Cloning the Jenkins X versions repo https://github.com/jstrachan/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mcb-kubecd-golang-05-master-z794w-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/golang-05 main.go
+
+Showing logs for build [32mcb-kubecd-golang-05-master-z794w-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+ERROR: logging before flag.Parse: E0217 21:19:13.628918      11 metadata.go:241] Failed to unmarshal scopes: invalid character 'h' looking for beginning of value
+[36mINFO[0m[0001] No base image, nothing to extract            
+[36mINFO[0m[0001] cmd: EXPOSE                                  
+[36mINFO[0m[0001] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0001] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0001] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0001] Taking snapshot of full filesystem...        
+[36mINFO[0m[0001] EXPOSE 8080                                  
+[36mINFO[0m[0001] cmd: EXPOSE                                  
+[36mINFO[0m[0001] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0001] ENTRYPOINT ["/golang-05"]                    
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0001] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0001] COPY ./bin/ /                                
+[36mINFO[0m[0001] Taking snapshot of files...                  
+2020/02/17 21:19:17 pushed blob: sha256:227d58f362dcebc404bfc17dbcb3e8e9fa0403f721815d04c6860511d4401e6f
+2020/02/17 21:19:18 pushed blob: sha256:0d6e95913495d6567d411c60bf2cd8ca9e45f0f96817e92dd9092484173c0591
+2020/02/17 21:19:20 gcr.io/**-development/golang-05:0.0.1: digest: sha256:a22746ba65dcb8bf2f02131ba39e349f3a5ac3d548ef45d0091a3aa4a827bbf7 size: 428
+
+Showing logs for build [32mcb-kubecd-golang-05-master-z794w-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mcb-kubecd-golang-05-master-z794w-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/golang-05 to an unshallow repository
+Generating change log from git ref 97de6bfb32da9260870d0f3b4c1fd0ee82acb51f => d96b5dbefea480b8fd22c0e63dad0300dff35956
+Associating user x-0 in users.jenkins.io with email rawlingsj80@gmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 33c40a5e628f769231242e39692795180df05a40 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for cb-kubecd/golang-05 and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/cb-kubecd/golang-05/releases/tag/v0.0.1
+generated: /workspace/source/charts/golang-05/templates/release.yaml
+Created Release golang-05-0-0-1 resource in namespace **
+Updating PipelineActivity cb-kubecd-golang-05-master-1 with version 0.0.1
+Updated PipelineActivities cb-kubecd-golang-05-master-1 with release notes URL: https://github.com/cb-kubecd/golang-05/releases/tag/v0.0.1
+
+Showing logs for build [32mcb-kubecd-golang-05-master-z794w-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file golang-05-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mcb-kubecd-golang-05-master-z794w-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+failed to get helm version: failed to run 'helm version --short' command in directory '', output: 'Client: v2.14.3+g0e7f3b6
+Error: could not find tiller'
+old helm binary on the PATH so replacing with helm 3
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app golang-05 version 0.0.1 to namespace **-staging
+WARNING: 
+WARNING: Waiting for the fork of ******************/environment-jr20-staging to appear...
+Forked Git repository to https://github.com/******************/environment-jr20-staging
+Created Pull Request: https://github.com/cb-kubecd/environment-jr20-staging/pull/1
+Added label updatebot to Pull Request https://github.com/cb-kubecd/environment-jr20-staging/pull/1
+got git provider status pending from PR https://github.com/cb-kubecd/environment-jr20-staging/pull/1
+got git provider status pending from PR https://github.com/cb-kubecd/environment-jr20-staging/pull/1
+got git provider status pending from PR https://github.com/cb-kubecd/environment-jr20-staging/pull/1
+error: Pull request https://github.com/cb-kubecd/environment-jr20-staging/pull/1 last commit has status failure for ref ece482a689de24461364cf0d0cae2328d899847c
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-jx-promote'. The execution of the pipeline has stopped.[0m
